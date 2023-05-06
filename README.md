@@ -20,7 +20,23 @@ If you don't want to spend ~15-20 mins to build such a report in your org (as de
 Translation Workbench needs to be enabled in your org to install this report.
 
 ## Deploy this to your org
+
 <a href="https://githubsfdeploy.herokuapp.com?owner=UnofficialSalesforceHLS&repo=SFDataClassificationReport">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
+
+## Prefer SFDX?
+1. Clone this repository:
+    ```
+    git clone https://github.com/UnofficialSalesforceHLS/SFDataClassificationReport.git
+    cd SFDataClassificationReport
+    ```
+1. Authorize your Salesforce org via VSCode or Terminal:
+    ```
+    sfdx force:auth:web:login
+    ```
+1. Deploy meta-data to your org via VSCode or Terminal (replace YOURUSERNAME with valid one):
+    ```
+    sfdx force:source:deploy --sourcepath ./force-app -u YOURUSERNAME
+    ```
