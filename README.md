@@ -36,7 +36,7 @@ Translation Workbench needs to be enabled in your org to install this report.
     ```
     sfdx force:auth:web:login
     ```
-1. Deploy meta-data to your org via VSCode or Terminal (replace YOURUSERNAME with valid one):
+1. Deploy metadata to your org via VSCode or Terminal (replace YOURUSERNAME with valid one):
     ```
     sfdx force:source:deploy --sourcepath ./force-app -u YOURUSERNAME
     ```
