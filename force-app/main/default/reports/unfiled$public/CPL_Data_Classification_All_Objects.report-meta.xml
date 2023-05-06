@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>EntityDefinition.FieldDefinitions$IsFlsEnabled</column>
+        </chartSummaries>
+        <chartType>Donut</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>false</expandOthers>
+        <groupingColumn>EntityDefinition.FieldDefinitions$ComplianceGroup</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>true</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
     <columns>
         <field>EntityDefinition.FieldDefinitions$Label</field>
     </columns>
@@ -23,13 +49,17 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>EntityDefinition.FieldDefinitions$IsFlsEnabled</field>
     </columns>
-    <columns>
-        <field>EntityDefinition.FieldDefinitions$ComplianceGroup</field>
-    </columns>
     <description>This report gives an overview of compliance categorizations within Salesforce objects and fields.</description>
     <filter>
         <criteriaItems>
             <column>EntityDefinition$DeveloperName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>EntityDefinition.FieldDefinitions$ComplianceGroup</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>notEqual</operator>
@@ -43,6 +73,11 @@
         <field>EntityDefinition$DeveloperName</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>EntityDefinition.FieldDefinitions$ComplianceGroup</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name>Data Classification All Objects</name>
     <params>
         <name>co</name>
@@ -51,8 +86,8 @@
     <reportType>CPL_Data_Classification__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
-    <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
         <dateColumn>EntityDefinition$CreatedDate</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
